@@ -1,0 +1,40 @@
+<!-- ZgadnijKtoTO/templates/game.html -->
+<html>
+
+<head>
+  <title>Zgadnij kto to</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <h1>Gra:</h1>
+  <div id="main"></div>
+  <form method="POST"> 
+    <table>
+      <tr>
+      {% for ch in chars %}
+        <td>
+            <input type = "checkbox" name = "mycheckbox" value = "{{ch.name}}" id= "{{ch.name}}"/>
+            <label for = "{{ch.name}}"><img src="{{ url_for('static', filename= ch.filename) }}" alt="{{ch.name}}" {% if ch.visibility == False %} class = "greyed" {% endif %}/></label>
+
+        </td>
+        {% if loop.index % 6 == 0 %}
+          </tr><tr>
+        {% endif %}
+      {% endfor %}
+      </tr>
+    </table>
+    <input type="submit" value="Zapisz zmiany">
+  </form>
+  </div>
+
+  <script>
+    $('img').click(function () {
+      $(this).toggleClass("greyed");
+    });
+  </script>
+</body>
+
+</html>

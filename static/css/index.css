@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(9, 70, 88);
+    text-align: center;
+}
+
+#button1 {
+    height: 50px;
+    width: 120px;
+    color: navy;
+    background-color: slateblue;
+    border: 2px solid white;
+}

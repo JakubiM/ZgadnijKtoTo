@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+
+.greyed {
+    filter: grayscale(100%);
+
+}
+
+input[type="checkbox"] {
+    display: none;
+}

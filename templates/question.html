@@ -1,0 +1,44 @@
+<!-- ZgadnijKtoTO/templates/question.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <form method="POST">
+        {{form.csrf_token}}
+        {{form.att}}
+        {{form.typ}}
+    </form>
+    <button id="questButton">Zadaj pytanie</button>
+    <script>
+        let att_select = document.getElementById('att');
+        let typ_select = document.getElementById('typ');
+
+        att_select.onchange = function () {
+            att = att_select.value;
+
+            fetch('typ/' + att).then(function (response) {
+                response.json().then(function (data) {
+                    let optionHTML = '';
+                    for (let typ of data.typs) {
+                        optionHTML += '<option value :' + typ.name + '">' + typ.value + '</option>';
+                    }
+                    typ_select.innerHTML = optionHTML;
+                });
+            });
+        }
+        $('#questButton').click(function () {
+            let attselect = document.getElementById('att');
+            let typselect = document.getElementById('typ');
+            location.href = "/get_question/" + attselect.value + "/" + typselect.value;
+
+        });
+    </script>
+</body>
+
+</html>

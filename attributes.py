@@ -22,7 +22,8 @@ class HairColour(Enum):
     red = "rudy"
     grey = "siwy"
     blond = "blond"
-    dark = "ciemny"
+    dark = "brązowy"
+    black = "czarny"
 
 
 class Eyes(Enum):
@@ -56,14 +57,64 @@ class HairAccessories(Enum):
     yes = "ma"
     no = "nie ma"
 
+class Nose(Enum):
+    big = "duży"
+    small = "mały"
 
-Attributes = [["Płec", "mężczyzna", "kobieta"],
-              ["Skóra", "biały", "mulat", "czarny"],
-              ["Włosy", "długie", "krótkie", "łysy"],
-              ["Kolor_włosów", "rudy", "siwy", "blond", "ciemny"],
-              ["Oczy", "piwne", "niebieskie"],
-              ["Okulary", "ma", "nie ma"],
-              ["Zarost", "wąsy", "broda", "broda i wąsy", "brak"],
-              ["Czapka", "ma", "nie ma"],
-              ["Akcseroia_na_głowie", "ma", "nie ma"]]
-# , "Skóra", "Włosy", "Kolor włosów", "Oczy", "Okulary", "Kolczyki", "Zarost", "Czapka", "Akcesoria na włosach"]
+Att = [('Sex', 'Płeć'),
+       ('Skin', 'Kolor skóry'),
+       ('Hair', 'Włosy'),
+       ('HairColour', 'Kolor włosów'),
+       ('Eyes', 'Kolor oczu'),
+       ('Glasses', 'Okulary'),
+       ('Earrings', 'Kolczyki'),
+       ('Beard', 'Zarost'),
+       ('Cap', 'Czapka'),
+       ('HairAccessories', 'Akcesoria na glowie'),
+       ('Nose', 'Nos')
+       ]
+attdict = {
+    'Sex': 'Płeć',
+    'Skin': 'Kolor skóry',
+    'Hair': 'Włosy',
+    'HairColour': 'Kolor włosów',
+    'Eyes': 'Kolor oczu',
+    'Glasses': 'Okulary',
+    'Earrings': 'Kolczyki',
+    'Beard': 'Zarost',
+    'Cap': 'Czapka',
+    'HairAccessories': 'Akcesoria na glowie',
+    'Nose' : 'Nos',
+    '': ''
+}
+reqdict = {
+    'yes': 'Tak',
+    'no' : 'Nie',
+    '': ''
+}
+
+typdict = {
+    'male' : 'mężczyzna',
+    'female' : 'kobieta',
+    'white' : 'biały',
+    'mulatto' : 'mulat',
+    'black' : 'czarny',
+    'long': 'długie',
+    'short' : 'krótkie',
+    'bald' : 'łysy',
+    'red' : 'rudy',
+    'grey' : 'siwy',
+    'blond' : 'blond',
+    'dark' : 'brązowe',
+    'brown' : 'piwne',
+    'blue' : 'niebieskie',
+    'yes' : 'ma',
+    'no' : 'nie ma',
+    'moustache' : 'wąsy',
+    'beard' : 'broda',
+    'beard_moustache' : 'broda i wąsy',
+    'none' : 'brak',
+    'big' : 'duży',
+    'small' : 'mały',
+    '': ''
+}

@@ -7,13 +7,14 @@
 </head>
 
 <body style="background-color:pink;">
-    <h1>Odpowiedz na pytanie przeciwnika!</h1>
+    <h1>Odpowiedz na pytanie przeciwnika</h1>
+
     <h2>Przeciwnik zapytał o atrybuty: {{pytanie}}</h2>
     <form method="POST">
         {{form.yesno}}
         <input type="submit" value="Odpowiedz" /> 
     </form>
-    <h1>Twoja postać: </h1>
+    <h1>Twoja postac: </h1>
     <img src="{{ url_for('static', filename= turn.char.filename) }}" alt="{{turn.char.name}}">
 </body>
 

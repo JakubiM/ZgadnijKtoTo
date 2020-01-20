@@ -12,6 +12,8 @@ class Player:
         self.request = ""
 
     def getQuestion(self):
+        if self.request == "":
+            return ""
         return "{}, {}, odpowiedź to: {}".format(attdict[self.quest_att], typdict[self.quest_typ], reqdict[self.request])
     
     def getQuestAtt(self):

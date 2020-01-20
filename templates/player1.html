@@ -39,13 +39,13 @@
         <h1>Twoja postać:</h1>
         <img src="{{ url_for('static', filename= p_char.filename) }}" alt="{{p_char.name}}">
 
-        <input name="charButton" type="submit" value="Zapisz zmiany" />
+        <input class="btn btn-primary" name="charButton" type="submit" value="Zapisz zmiany" />
       </form>
     </div>
     <div class="text-center pt-5">
-      <button class="btn btn-primary onclick=" window.location.href='{{ url_for( 'question') }}' ;">Zadaj
+      <button class="btn btn-primary" onclick=" window.location.href='{{ url_for( 'question') }}' ;">Zadaj
         pytanie</button>
-      <button class="btn btn-primary onclick=" window.location.href='{{ url_for( 'zgadnij') }}' ;">Zgadnij
+      <button class="btn btn-primary" onclick=" window.location.href='{{ url_for( 'zgadnij') }}' ;">Zgadnij
         postać</button>
       <h1>Ostatnio pytałeś o: {{quest}}</h1>
     </div>

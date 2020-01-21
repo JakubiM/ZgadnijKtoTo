@@ -23,7 +23,6 @@ Player1.chars = deepcopy(characters.characters)
 Player2.chars = deepcopy(characters.characters)
 Player1.char = characters.characters[randint(0, 23)]
 Player2.char = characters.characters[randint(0, 23)]
-print(getattr(Player1.char, 'Sex'))
 turn = Player1
 
 

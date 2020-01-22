@@ -74,8 +74,15 @@ def question2():
                         for x in getattr(sys.modules[__name__], turn.quest_att)]
     if request.method == 'POST':
         turn.quest_typ = form.typ.data
-        return redirect(url_for('change'))
+        return redirect(url_for('change2'))
     return render_template('question2.html', form=form)
+
+
+@app.route('/change2', methods=['POST', 'GET'])
+def change2():
+    if request.method == 'POST':
+        return redirect(url_for('change'))
+    return render_template('change2.html')
 
 
 @app.route('/zgadnij', methods=['POST', 'GET'])
